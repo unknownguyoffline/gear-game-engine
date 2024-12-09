@@ -1,0 +1,38 @@
+[
+{
+  "directory": "D:/gear-game-engine/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe  @CMakeFiles/engine.dir/includes_CXX.rsp -g -o CMakeFiles\\engine.dir\\core\\Application.cpp.obj -c D:\\gear-game-engine\\engine\\core\\Application.cpp",
+  "file": "D:/gear-game-engine/engine/core/Application.cpp",
+  "output": "engine/CMakeFiles/engine.dir/core/Application.cpp.obj"
+},
+{
+  "directory": "D:/gear-game-engine/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe  @CMakeFiles/engine.dir/includes_CXX.rsp -g -o CMakeFiles\\engine.dir\\core\\EntryPoint.cpp.obj -c D:\\gear-game-engine\\engine\\core\\EntryPoint.cpp",
+  "file": "D:/gear-game-engine/engine/core/EntryPoint.cpp",
+  "output": "engine/CMakeFiles/engine.dir/core/EntryPoint.cpp.obj"
+},
+{
+  "directory": "D:/gear-game-engine/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe  @CMakeFiles/engine.dir/includes_CXX.rsp -g -o CMakeFiles\\engine.dir\\utility\\Console.cpp.obj -c D:\\gear-game-engine\\engine\\utility\\Console.cpp",
+  "file": "D:/gear-game-engine/engine/utility/Console.cpp",
+  "output": "engine/CMakeFiles/engine.dir/utility/Console.cpp.obj"
+},
+{
+  "directory": "D:/gear-game-engine/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe  @CMakeFiles/engine.dir/includes_CXX.rsp -g -o CMakeFiles\\engine.dir\\utility\\String.cpp.obj -c D:\\gear-game-engine\\engine\\utility\\String.cpp",
+  "file": "D:/gear-game-engine/engine/utility/String.cpp",
+  "output": "engine/CMakeFiles/engine.dir/utility/String.cpp.obj"
+},
+{
+  "directory": "D:/gear-game-engine/build/engine/platform",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe  @CMakeFiles/platform.dir/includes_CXX.rsp -g -o CMakeFiles\\platform.dir\\linux\\ConsoleColor.cpp.obj -c D:\\gear-game-engine\\engine\\platform\\linux\\ConsoleColor.cpp",
+  "file": "D:/gear-game-engine/engine/platform/linux/ConsoleColor.cpp",
+  "output": "engine/platform/CMakeFiles/platform.dir/linux/ConsoleColor.cpp.obj"
+},
+{
+  "directory": "D:/gear-game-engine/build/project",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe  @CMakeFiles/app.dir/includes_CXX.rsp -g -o CMakeFiles\\app.dir\\testbed\\testbed.cpp.obj -c D:\\gear-game-engine\\project\\testbed\\testbed.cpp",
+  "file": "D:/gear-game-engine/project/testbed/testbed.cpp",
+  "output": "project/CMakeFiles/app.dir/testbed/testbed.cpp.obj"
+}
+]

@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc libplatform.a CMakeFiles/platform.dir/linux/ConsoleColor.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe libplatform.a
