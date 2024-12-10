@@ -1,2 +1,0 @@
-C:\msys64\ucrt64\bin\ar.exe qc libengine.a CMakeFiles/engine.dir/core/Application.cpp.obj CMakeFiles/engine.dir/core/EntryPoint.cpp.obj CMakeFiles/engine.dir/utility/Console.cpp.obj CMakeFiles/engine.dir/utility/String.cpp.obj
-C:\msys64\ucrt64\bin\ranlib.exe libengine.a
