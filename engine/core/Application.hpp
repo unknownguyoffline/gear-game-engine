@@ -1,7 +1,7 @@
 #pragma once
 #include "utility/Console.hpp"
 
-namespace New
+namespace Gear
 {
 class Application
 {
@@ -26,4 +26,4 @@ class Application
   private:
     bool mRunning = false;
 };
-} // namespace New
+} // namespace Gear

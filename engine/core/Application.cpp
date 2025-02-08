@@ -1,6 +1,6 @@
 #include "Application.hpp"
 
-namespace New
+namespace Gear
 {
 void Application::run()
 {
@@ -10,4 +10,4 @@ void Application::run()
 void Application::close()
 {
 }
-} // namespace New
+} // namespace Gear

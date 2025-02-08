@@ -1,6 +1,6 @@
 #include <Engine.hpp>
 
-class App : public New::Application
+class App : public Gear::Application
 {
   public:
     void start() override
@@ -28,7 +28,7 @@ class App : public New::Application
   private:
 };
 
-New::Application *New::Application::create(int argc, char **argv)
+Gear::Application *Gear::Application::create(int argc, char **argv)
 {
     return new App;
 }
