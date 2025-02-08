@@ -2,8 +2,45 @@
 #include "platform/ConsoleColor.hpp"
 #include <string.h>
 
-void checkFormat(const String &string)
+bool hasError(const String &string)
 {
+    bool argumentStart = false;
+    for (int i = 0; i < string.size(); i++)
+    {
+        if (string[i] == '{' && argumentStart == false)
+        {
+            argumentStart = true;
+            continue;
+        }
+        if (string[i] == '}')
+        {
+            argumentStart = false;
+            continue;
+        }
+
+        if (string[i] == '{' && argumentStart)
+        {
+            printf("format_error: expected \'}\' after \'{\' [%s]", string.c_str());
+            return true;
+        }
+        if (string[i] == '\0' && argumentStart)
+        {
+            printf("format_error: expected \'}\' after \'{\' [%s]", string.c_str());
+            return true;
+        }
+        if (string[i] == '\n' && argumentStart)
+        {
+            printf("format_error: expected \'}\' after \'{\' [%s]", string.c_str());
+            return true;
+        }
+    }
+    if (argumentStart == true)
+    {
+        printf("format_error: expected \'}\' after \'{\' [%s]", string.c_str());
+        return true;
+    }
+
+    return false;
 }
 void Console::write(const char *message, ...)
 {
@@ -15,7 +52,8 @@ void Console::write(const char *message, ...)
 void Console::writeVa(const char *message, va_list list)
 {
     String word;
-    checkFormat(message);
+    if (hasError(message))
+        return;
     size_t stringSize = strlen(message);
     for (size_t i = 0; i < stringSize; i++)
     {
@@ -30,12 +68,14 @@ void Console::writeVa(const char *message, va_list list)
             }
             if (subword == "int")
                 printf("%d", va_arg(list, int));
-            if (subword == "float")
+            else if (subword == "float")
                 printf("%f", va_arg(list, double));
-            if (subword == "bool")
+            else if (subword == "bool")
                 printf("%s", va_arg(list, int) ? "true" : "false");
-            if (subword == "string")
+            else if (subword == "string")
                 printf("%s", va_arg(list, const char *));
+            else
+                printf("logging_error: invalid type [%s]", subword.c_str());
             i++;
         }
         printf("%c", message[i]);
