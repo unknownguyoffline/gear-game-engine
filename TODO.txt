@@ -1,5 +1,5 @@
-console logging with tracing -- in progress
-logging macros
+console logging - done
+logging macros - done
 memory manager
 string class
 file manager
