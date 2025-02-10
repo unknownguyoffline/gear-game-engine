@@ -3,7 +3,8 @@
 
 int main(int argc, char **argv)
 {
-    Gear::Application *application = Gear::Application::create(argc, argv);
+    Gear::Application *application = Gear::Application::createApplication(argc, argv);
     application->run();
     delete application;
+    return 0;
 }

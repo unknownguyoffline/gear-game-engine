@@ -2,6 +2,16 @@
 
 namespace Gear
 {
+
+Application *Application::mInstance = nullptr;
+
+Application *Application::createApplication(int argc, char **argv)
+{
+    if (mInstance == nullptr)
+        mInstance = create(argc, argv);
+    return mInstance;
+}
+
 void Application::run()
 {
     start();
@@ -10,4 +20,5 @@ void Application::run()
 void Application::close()
 {
 }
+
 } // namespace Gear
