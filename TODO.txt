@@ -1,7 +1,7 @@
 console logging - done
 logging macros - done
 memory manager - done
-string class
+string class - in progress
 file manager
 reference counting system
 windowing
