@@ -1,6 +1,6 @@
 console logging - done
 logging macros - done
-memory manager - in progress
+memory manager - done
 string class
 file manager
 reference counting system
