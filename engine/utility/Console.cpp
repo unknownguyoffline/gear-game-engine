@@ -74,6 +74,8 @@ void Console::writeVa(const char *message, va_list list)
                 printf("%s", va_arg(list, int) ? "true" : "false");
             else if (subword == "string")
                 printf("%s", va_arg(list, const char *));
+            else if (subword == "pointer")
+                printf("%p", va_arg(list, void *));
             else
                 printf("logging_error: invalid type [%s]", subword.c_str());
             i++;
@@ -121,7 +123,15 @@ void Console::fatal(const char *message, ...)
     setConsoleTextColor(237, 211, 110);
     va_start(list, message);
     writeVa(message, list);
-    printf("%s", end.c_str());
-    resetConsoleColor();
+    for (int i = 0; i < end.size(); i++)
+    {
+        if (end[i] == '\n')
+        {
+            resetConsoleColor();
+            printf("\n");
+            break;
+        }
+        printf("%c", end[i]);
+    }
     va_end(list);
 }
