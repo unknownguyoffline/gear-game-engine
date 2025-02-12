@@ -66,13 +66,11 @@ class App : public Gear::Application
     {
         CLIENT_LOG("[TESTING MEMORY MANAGER]");
         MemoryManager memoryManager;
-        memoryManager.allocate(sizeof(int) * 2);
-        CLIENT_LOG("int pointer1: {pointer}", memoryManager.getMemory<int>(1));
-        CLIENT_LOG("2 char pointer2: {pointer}", memoryManager.getMemory<char>(2));
-        CLIENT_LOG("char pointer3: {pointer}", memoryManager.getMemory<char>(1));
-        CLIENT_LOG("char pointer3: {pointer}", memoryManager.getMemory<char>(1));
-        CLIENT_LOG("char pointer4: {pointer}", memoryManager.getMemory<char>(1));
-        memoryManager.deallocate();
+        CLIENT_LOG("int pointer1: {pointer}", new int);
+        CLIENT_LOG("2 char pointer2: {pointer}", new char[2]);
+        CLIENT_LOG("char pointer3: {pointer}", new char);
+        CLIENT_LOG("char pointer3: {pointer}", new char);
+        CLIENT_LOG("char pointer4: {pointer}", new char);
     }
 
   private:

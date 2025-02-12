@@ -21,15 +21,3 @@ void MemoryManager::deallocate()
 {
     free(mArena);
 }
-
-// void *MemoryManager::getMemory(size_t size)
-// {
-//     if (mPosition + size > mCapacity)
-//     {
-//         CORE_ERROR("MemoryManager: Out of memory");
-//         return 0;
-//     }
-//     uint8_t *result = &mArena[mPosition];
-//     mPosition += size;
-//     return result;
-// }
