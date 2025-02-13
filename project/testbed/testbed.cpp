@@ -21,6 +21,14 @@ class App : public Gear::Application
     void end() override
     {
     }
+    void testString()
+    {
+        printf("[TESTING STRING]");
+        BasicString string;
+        string.set("hello world");
+        console.log("string: {string} size: {int} capacity: {int}", string.getString(), string.getSize(),
+                    string.getCapacity());
+    }
     void testConsoleLogErrorChecker()
     {
         printf("[TESTING CONSOLE LOGGING ERROR CHECKER]\n");
@@ -64,13 +72,13 @@ class App : public Gear::Application
     }
     void testMemoryManager()
     {
-        CLIENT_LOG("[TESTING MEMORY MANAGER]");
+        printf("[TESTING MEMORY MANAGER]");
         MemoryManager memoryManager;
-        CLIENT_LOG("int pointer1: {pointer}", new int);
-        CLIENT_LOG("2 char pointer2: {pointer}", new char[2]);
-        CLIENT_LOG("char pointer3: {pointer}", new char);
-        CLIENT_LOG("char pointer3: {pointer}", new char);
-        CLIENT_LOG("char pointer4: {pointer}", new char);
+        console.log("int pointer1: {pointer}", new int);
+        console.log("2 char pointer2: {pointer}", new char[2]);
+        console.log("char pointer3: {pointer}", new char);
+        console.log("char pointer3: {pointer}", new char);
+        console.log("char pointer4: {pointer}", new char);
     }
 
   private:
