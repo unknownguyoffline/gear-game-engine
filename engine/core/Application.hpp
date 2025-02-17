@@ -1,6 +1,5 @@
 #pragma once
 #include "core/Macro.hpp"
-#include "utility/Console.hpp"
 
 namespace Gear
 {
@@ -34,8 +33,6 @@ class Application
 
     Application(const Application &) = delete;
     void operator=(const Application &) = delete;
-
-    Console console;
 
     ~Application()
     {
