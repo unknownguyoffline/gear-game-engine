@@ -5,6 +5,7 @@ set(CMAKE_BUILD_TYPE Debug)
 project(Engine)
 include_directories(${PROJECT_SOURCE_DIR}/engine/)
 include_directories(${PROJECT_SOURCE_DIR}/engine/vendor/glm)
+include_directories(${PROJECT_SOURCE_DIR}/engine/vendor/glad/include/)
 
 add_subdirectory(engine)
 add_subdirectory(project)
