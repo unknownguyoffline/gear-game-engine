@@ -1,15 +1,23 @@
 #include <Engine.hpp>
+#include <GLFW/glfw3.h>
 #include <core/Macro.hpp>
+#include <glm/glm.hpp>
 
 class App : public Gear::Application
 {
   public:
     void start() override
     {
+        glm::vec2 color;
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+        {
+            CLIENT_ERROR("Failed to initial glad");
+        }
     }
 
     void update() override
     {
+        glClearColor(1.f, 1.f, 1.f, 1.f);
     }
     void end() override
     {

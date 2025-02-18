@@ -8,6 +8,7 @@ file(GLOB source
 )
 
 add_subdirectory(platform)
+add_subdirectory(vendor)
 
 add_library(engine STATIC ${source})
 target_link_libraries(engine platform)

@@ -8,3 +8,4 @@ file(GLOB source
 
 add_executable(app ${source})
 target_link_libraries(app engine)
+target_link_libraries(app opengl32)

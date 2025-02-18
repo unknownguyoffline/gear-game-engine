@@ -4,6 +4,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE Debug)
 project(Engine)
 include_directories(${PROJECT_SOURCE_DIR}/engine/)
+include_directories(${PROJECT_SOURCE_DIR}/engine/vendor/glm)
+
 add_subdirectory(engine)
 add_subdirectory(project)
 
