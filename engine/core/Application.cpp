@@ -15,20 +15,27 @@ Application *Application::createApplication(int argc, char **argv)
 
 void Application::run()
 {
-    initialize();
-    window.reset(createWindow(applicationInitInfo.windowTitle.c_str(), applicationInitInfo.windowSize.x,
-                              applicationInitInfo.windowSize.y));
+    init();
+    mWindow.reset(createWindow(mApplicationInitInfo.windowTitle.c_str(), mApplicationInitInfo.windowSize.x,
+                               mApplicationInitInfo.windowSize.y));
+    initGraphic();
     start();
     applicationLoop();
     end();
 }
+void Application::initGraphic()
+{
+    mGraphicContext.reset(mWindow->createGraphicContext(mApplicationInitInfo.graphicApi));
+    mGraphicContext->init();
+}
 void Application::applicationLoop()
 {
-    while (window->isOpen())
+    while (mRunning)
     {
+        mRunning = mWindow->isOpen();
         update();
         pollEvent();
-        window->swapBuffer();
+        mWindow->swapBuffer();
     }
 }
 void Application::close()

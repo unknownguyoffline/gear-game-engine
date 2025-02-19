@@ -7,13 +7,12 @@
 class App : public Gear::Application
 {
   public:
+    void init() override
+    {
+        getApplicationInitInfo().windowTitle = "Hello world";
+    }
     void start() override
     {
-        glm::vec2 color;
-        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-        {
-            CLIENT_ERROR("Failed to initial glad");
-        }
     }
 
     void update() override

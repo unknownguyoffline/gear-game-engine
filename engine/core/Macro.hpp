@@ -5,15 +5,39 @@
 
 #if ENABLE_PRINT_MACROS
 
-#define CORE_LOG(...) printf(__VA_ARGS__);
-#define CORE_WARN(...) printf(__VA_ARGS__);
-#define CORE_ERROR(...) printf(__VA_ARGS__);
-#define CORE_FATAL(...) printf(__VA_ARGS__);
+#define CORE_LOG(...)                                                                                                  \
+    printf("log: ");                                                                                                   \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
+#define CORE_WARN(...)                                                                                                 \
+    printf("warn: ");                                                                                                  \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
+#define CORE_ERROR(...)                                                                                                \
+    printf("error: ");                                                                                                 \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
+#define CORE_FATAL(...)                                                                                                \
+    printf("fatal: ");                                                                                                 \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
 
-#define CLIENT_LOG(...) printf(__VA_ARGS__);
-#define CLIENT_WARN(...) printf(__VA_ARGS__);
-#define CLIENT_ERROR(...) printf(__VA_ARGS__);
-#define CLIENT_FATAL(...) printf(__VA_ARGS__);
+#define CLIENT_LOG(...)                                                                                                \
+    printf("log: ");                                                                                                   \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
+#define CLIENT_WARN(...)                                                                                               \
+    printf("warn: ");                                                                                                  \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
+#define CLIENT_ERROR(...)                                                                                              \
+    printf("error: ");                                                                                                 \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
+#define CLIENT_FATAL(...)                                                                                              \
+    printf("fatal: ");                                                                                                 \
+    printf(__VA_ARGS__);                                                                                               \
+    printf("\n");
 
 #else
 

@@ -13,6 +13,6 @@ if (WIN32)
 	target_link_libraries(app opengl32)
 endif (WIN32)
 
-if (WIN32)
+if (UNIX)
 	target_link_libraries(app GL)
-endif (WIN32)
+endif (UNIX)

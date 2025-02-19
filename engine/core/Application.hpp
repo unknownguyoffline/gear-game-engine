@@ -1,6 +1,6 @@
 #pragma once
 #include "core/Macro.hpp"
-#include "core/Window.h"
+#include "core/Window.hpp"
 #include <memory>
 #include <string>
 
@@ -8,6 +8,7 @@ struct ApplicationInitInfo
 {
     glm::uvec2 windowSize = glm::uvec2(800, 600);
     std::string windowTitle = "Untitled";
+    GraphicApi graphicApi = OPENGL;
 };
 
 namespace Gear
@@ -15,7 +16,7 @@ namespace Gear
 class Application
 {
   public:
-    virtual void initialize()
+    virtual void init()
     {
     }
     virtual void start()
@@ -40,6 +41,7 @@ class Application
     void run();
     void applicationLoop();
     void close();
+    void initGraphic();
 
     static Application *create(int argc, char **argv);
     static Application *createApplication(int argc, char **argv);
@@ -55,12 +57,16 @@ class Application
     {
     }
 
-    std::shared_ptr<Window> window;
-
-    ApplicationInitInfo applicationInitInfo;
+    ApplicationInitInfo &getApplicationInitInfo()
+    {
+        return mApplicationInitInfo;
+    }
 
   private:
-    bool mRunning = false;
+    bool mRunning = true;
     static Application *mInstance;
+    std::shared_ptr<GraphicContext> mGraphicContext;
+    std::shared_ptr<Window> mWindow;
+    ApplicationInitInfo mApplicationInitInfo;
 };
 } // namespace Gear

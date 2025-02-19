@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "Window.hpp"
 #include <GLFW/glfw3.h>
 
 class WindowsWindow : public Window
