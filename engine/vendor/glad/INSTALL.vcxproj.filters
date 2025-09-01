@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\DELL\gear-game-engine\CMakeFiles\a2e71751a68337b5bcb839a1fe88f854\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{883AF57D-464A-3074-8E4A-0B8DE8E9401B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

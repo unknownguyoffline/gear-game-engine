@@ -1,0 +1,13 @@
+[submodule "engine/vendor/glm"]
+	path = engine/vendor/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "engine/vendor/glfw"]
+	path = engine/vendor/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "engine/vendor/assimp"]
+	path = engine/vendor/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "project/scene/imgui"]
+	path = project/scene/imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking
