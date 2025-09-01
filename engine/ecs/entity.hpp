@@ -1,5 +1,5 @@
 #pragma once
-#include <vendor/entt/entt.hpp>
+#include <entt/entt.hpp>
 
 struct Entity
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include <vendor/entt/entt.hpp>
+#include <entt/entt.hpp>
 #include <ecs/entity.hpp>
 #include <ecs/component.hpp>
 

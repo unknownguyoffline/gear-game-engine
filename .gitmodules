@@ -11,3 +11,6 @@
 	path = project/scene/imgui
 	url = https://github.com/ocornut/imgui.git
 	branch = docking
+[submodule "engine/vendor/entt"]
+	path = engine/vendor/entt
+	url = https://github.com/skypjack/entt.git

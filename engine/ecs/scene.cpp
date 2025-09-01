@@ -13,7 +13,7 @@ Entity Scene::GetEntityFromEntt(entt::entity entity)
     return Entity(mRegistry, entity);
 }
 
-inline entt::registry &Scene::GetRegistry()
+entt::registry &Scene::GetRegistry()
 {
     return mRegistry;
 }

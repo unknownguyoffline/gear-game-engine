@@ -3,3 +3,11 @@ build/
 .vscode/
 .vs/
 compile_commands.json
+/output
+*.vcxproj
+/project/CMakeFiles
+*.cmake
+*.filters
+*.stamp
+*.depend
+*.sln
