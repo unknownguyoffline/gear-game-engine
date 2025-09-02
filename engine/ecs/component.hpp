@@ -22,6 +22,5 @@ struct CameraComponent
     float fov = 90.f;
     float nearPlane = 0.01f;
     float farPlane = 100.f;
-    float aspectRatio = 1.3333; // default window width and height (800 x 600). 800 / 600 = 1.
     static Entity currentCamera;
 };

@@ -66,7 +66,7 @@ class EditorUi
 
         ImGui_ImplGlfw_InitForOpenGL(window, true);
         ImGui_ImplOpenGL3_Init();
-
+        
         ImGui::GetIO().Fonts->AddFontFromFileTTF("pt-root-ui_regular.ttf");
         ImGui::GetIO().FontGlobalScale = 1.2f;
 
@@ -88,6 +88,13 @@ class EditorUi
     {
 
         // render game
+
+        //auto cameraView = mScene->GetRegistry().view<CameraComponent>();
+        //for (entt::entity e : cameraView)
+        //{
+
+        //}
+
 
         mFrameBuffer.Select();
         Graphic::SetViewport(mUiVariables.gameWindowSize);
@@ -119,15 +126,15 @@ class EditorUi
         {
             if (mUiVariables.openShowWindow)
                 ImGui::ShowDemoWindow(&mUiVariables.openShowWindow);
-            SceneView();
+            SceneHierarchyPanel();
         }
         GameWindow();
-        PropertyWindow();
+        EntityPropertyPanel();
 
 
         ImGui::Render();
 
-        Renderer::ClearScreen(Color::White);
+        Renderer::ClearScreen(Color::White); 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     }
 
@@ -140,7 +147,7 @@ class EditorUi
         mScene = &scene;
     }
 
-    void SceneView()
+    void SceneHierarchyPanel()
     {
         
         ImGui::Begin("Scene hierarchy");
@@ -191,7 +198,7 @@ class EditorUi
 
         ImGui::End();
     }
-    void PropertyWindow()
+    void EntityPropertyPanel()
     {
 
         ImGui::Begin("Entity properties");
@@ -200,6 +207,7 @@ class EditorUi
             ImGui::End();
             return;
         }
+
         if (ImGui::Button("Add Component"))
         {
             ImGui::OpenPopup("Add Component");
@@ -238,7 +246,7 @@ class EditorUi
             {
                 Transform &transform = mUiVariables.mSelectedEntity.GetComponent<TransformComponent>().transform;
                 ImGui::PushID("TransformComponent");
-                ImGui::SeparatorText("Transform");
+                ImGui::SeparatorText("Transform Component");
                 ImGui::DragFloat3("Position", &transform.position.x);
                 ImGui::DragFloat3("Rotation", &transform.rotation.x);
                 ImGui::DragFloat3("Scale", &transform.scale.x);
@@ -247,8 +255,22 @@ class EditorUi
             if (mUiVariables.mSelectedEntity.HasComponent<QuadrilateralComponent>())
             {
                 ImGui::PushID("QuadrilateralComponent");
-                ImGui::SeparatorText("quadrilateral");
+                ImGui::SeparatorText("Quadrilateral Component");
                 ImGui::ColorEdit4("color", &mUiVariables.mSelectedEntity.GetComponent<QuadrilateralComponent>().color.r);
+                ImGui::PopID();
+            }
+            if (mUiVariables.mSelectedEntity.HasComponent<CameraComponent>())
+            {
+                ImGui::PushID("CameraComponent");
+                ImGui::SeparatorText("Camera Component");
+                CameraComponent& component = mUiVariables.mSelectedEntity.GetComponent<CameraComponent>();
+                ImGui::DragFloat("Fov", &component.fov);
+                ImGui::DragFloat("Near plane", &component.nearPlane);
+                ImGui::DragFloat("Far plane", &component.farPlane);
+                if (ImGui::Button("Set as current camera"))
+                {
+                    CameraComponent::currentCamera = mUiVariables.mSelectedEntity;
+                }
                 ImGui::PopID();
             }
         }
