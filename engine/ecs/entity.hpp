@@ -18,7 +18,9 @@ struct Entity
     }
 
     Entity(entt::registry &registry, entt::entity entity);
-
+    Entity()
+    {
+    }
     entt::registry *mRegistry;
     entt::entity mEntity;
 };

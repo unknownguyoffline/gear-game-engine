@@ -38,7 +38,10 @@ class Texture
     void Create(const Image &image);
     void Select(uint32_t slot) const;
     void Deselect() const;
-
+    inline uint32_t GetId()
+    {
+        return mId;
+    }
   private:
     uint32_t mId = 0;
     glm::uvec2 mSize = glm::uvec2(0, 0);

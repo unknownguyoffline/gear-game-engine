@@ -27,12 +27,12 @@ void Texture::Create(unsigned char *data, const glm::uvec2 &size, ImageFormat fo
     mSize = size;
     glGenTextures(1, &mId);
     glBindTexture(GL_TEXTURE_2D, mId);
+    glTexImage2D(GL_TEXTURE_2D, 0, glFormat[format], size.x, size.y, 0, glFormat[format], GL_UNSIGNED_BYTE, data);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, glFilters[mParameter.magFilter]);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, glFilters[mParameter.minFilter]);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, glWrap[mParameter.wrapX]);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, glWrap[mParameter.wrapY]);
-    glTexImage2D(GL_TEXTURE_2D, 0, glFormat[format], size.x, size.y, 0, glFormat[format], GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D);
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, glWrap[mParameter.wrapX]);
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, glWrap[mParameter.wrapY]);
+    //glGenerateMipmap(GL_TEXTURE_2D);
     mSeletedId = mId;
 }
 void Texture::Select(uint32_t slot) const
@@ -60,3 +60,7 @@ TextureParameter Texture::GetTextureParameter() const
 {
     return mParameter;
 }
+//uint32_t Texture::GetId()
+//{
+//    return mId;
+//}

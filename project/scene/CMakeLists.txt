@@ -9,6 +9,7 @@ file(GLOB source
 	"${PROJECT_SOURCE_DIR}/imgui/*.cpp"
     "${PROJECT_SOURCE_DIR}/imgui/backends/imgui_impl_glfw.cpp"
     "${PROJECT_SOURCE_DIR}/imgui/backends/imgui_impl_opengl3.cpp"
+    "${PROJECT_SOURCE_DIR}/imgui/misc/cpp/imgui_stdlib.cpp"
 )
 
 add_executable(scene ${source})
